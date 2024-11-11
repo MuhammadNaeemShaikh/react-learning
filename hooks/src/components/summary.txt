@@ -1,0 +1,94 @@
+//use state
+
+The use state hooks lets you add state to functional components.
+In classes, the state is always an object.
+With in the usestatehook , the state dosen't have to be an object.
+The usestate hooks return an array with 2 element.
+The first value is the current value of the state, and the second element is state setter function.
+New State value depends on the previous state value? you can pass a function to the setter function.
+When dealing with objects or array, always make sure to spread your state variable and then call the setter function.
+
+
+//use effect
+
+Updating the document title to the current value
+
+ComponentDidMount Only worked once
+
+ComponentDidMount (){
+    document.title = `You Clicked {this.state.count} times`;
+}
+
+OR
+
+useEffect(()=>{
+
+},[])
+
+And
+
+ComponentDidUpdate worked when any time document will update
+
+ComponentDidUpdate (){
+    document.title = `You Clicked {this.state.count} times`;
+}
+OR
+useEffect(()=>{
+
+})
+
+componentWillUnmount run when document closed or kill
+
+componentWillUnmount(){
+    clearInterval(this.Interval)
+}
+
+OR
+useEffect(()=>{
+    return{}
+})
+
+The Effect Hook lets you perform side effect in functional components.
+
+It is a close replacement for ComponentDidMount,ComponentDidUpdate and componentWillUnmount.
+
+
+
+<------------------------------------- Use Context ----------------------------------------------->
+
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+
+<------------------------------------- Use Reducer ----------------------------------------------->
+
+Use Reducer is a hook that is used for state management.
+It is an alternative to usestate.
+useReducer is related to reducer function.
+useReducer(reducer,initialState)
+reducer(currentState,action)
+What's the difference.
+usestate is built using useReducer.
+When to useReducer vs usestate.
+
+Hooks So Far.
+usestate - state
+useEffect - sideEffect
+useContext - Context Api
+useReducer - Reducer
+
+
+<----------------------------------- Use Reducer With Use Context -------------------------------------------->
+
+Use Reducer --- Local State management
+Share State Between Components - Global State Management
+use Reducer - use Context
+
+
+
+<----------------------------------- Use Call Back Hook -------------------------------------------->
+
+What?
+use call back is a hook that will return memoized version of the call back function that only changes if one of the dependencies has changed.
+
+why?
+it is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary render.
